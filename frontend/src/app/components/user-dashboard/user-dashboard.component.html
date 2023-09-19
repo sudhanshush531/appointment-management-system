@@ -1,0 +1,45 @@
+<body>
+  <header>
+    <h1>User Functionality</h1>
+  </header>
+  <main>
+    <section class="book-appointment">
+      <h2>Book Appointment</h2>
+      <div>
+        <button class="btn btn-primary" type="button" routerLink="/bookappointment">Book Appointment</button>
+      </div>
+    </section>
+    <section class="cancellation">
+      <h2>Cancellation</h2>
+      <form (ngSubmit)="cancelAppointment">
+        <label for="appointment-id">Appointment ID:</label>
+        <input type="text" id="appointment-id" name="appointment-id">
+        <br>
+        <button type="submit">Cancel Appointment</button>
+      </form>
+    </section>
+    <section class="receipt">
+      <h2>Receipt</h2>
+      <p>No appointments booked yet.</p>
+    </section>
+    <section class="feedback">
+      <h2>Feedback</h2>
+      <form>
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <br>
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+        <br>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+</body>
+

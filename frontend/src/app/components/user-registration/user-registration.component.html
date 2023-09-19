@@ -1,0 +1,62 @@
+<!-- <div class="container">
+    <h2>User Registration</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" class="form-control" formControlName="firstName" required>
+        <div *ngIf="registrationForm.controls.firstName.invalid && (registrationForm.controls.firstName.dirty || registrationForm.controls.firstName.touched)" class="text-danger">
+          <div *ngIf="registrationForm.controls.firstName.errors.required">First name is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" class="form-control" formControlName="lastName" required>
+        <div *ngIf="registrationForm.controls.lastName.invalid && (registrationForm.controls.lastName.dirty || registrationForm.controls.lastName.touched)" class="text-danger">
+          <div *ngIf="registrationForm.controls.lastName.errors.required">Last name is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" formControlName="email" required>
+        <div *ngIf="registrationForm.controls.email.invalid && (registrationForm.controls.email.dirty || registrationForm.controls.email.touched)" class="text-danger">
+          <div *ngIf="registrationForm.controls.email.errors.required">Email is required.</div>
+          <div *ngIf="registrationForm.controls.email.errors.email">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control" formControlName="password" required>
+        <div *ngIf="registrationForm.controls.password.invalid && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)" class="text-danger">
+          <div *ngIf="registrationForm.controls.password.errors.required">Password is required.</div>
+          <div *ngIf="registrationForm.controls.password.errors.minlength">Password is too short.</div>
+          </div>
+      </div>
+   -->
+
+   <div class="container">
+    <h2>User Registration</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" formControlName="username">
+        <div *ngIf="submitted && registrationForm.controls['username'].invalid" class="text-danger">
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <div *ngIf="submitted && registrationForm.controls['email'].invalid" class="text-danger">
+           </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+        <div *ngIf="submitted && registrationForm.controls['password'].invalid" class="text-danger">
+           </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </form>
+  </div>
+  
