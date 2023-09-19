@@ -1,0 +1,161 @@
+<!-- <h1>Admin Dashboard</h1>
+
+
+<div>
+  <h2>Booked Appointments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Appointment ID</th>
+        <th>User ID</th>
+        <th>Clinic Area</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.appointmentId }}</td>
+        <td>{{ appointment.appointmentTime }}</td>
+        <td>{{ appointment.appointmentDate | date: 'mediumDate' }}</td>
+        <td>{{ appointment.appointmentFees }}</td>
+        <td>
+          <button (click)="cancelAppointment(appointment.appointmentId)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div>
+  <h2>User Data</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.patientId }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button (click)="viewUserAppointment(user.patientId)">View Appointments</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2>Feedback</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Feedback</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feedback of feedbacks">
+        <td>{{ feedback.fId }}</td>
+        <td>{{ feedback.message }}</td>
+        <td>
+          <button (click)="replyFeedback(feedback.fId, feedback.message)">Reply</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<!-- <h1>inside admin dashboard</h1>
+<div *ngFor="let appointment of appointments">
+
+  <h3>{{appointment.appointmentDate}}</h3>
+  <h4>{{appointment.appointmentTime}}</h4>
+  <h3>{{appointment.appointmentId}}</h3>
+  <h4>{{appointment.appointmentStatus}}</h4>
+  <h3>{{appointment.appointmentFees}}</h3>
+</div> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+</head>
+<body>
+	<h1>Admin Dashboard</h1>
+
+	<h2>Appointments Booked</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>User Name</th>
+				<th>Appointment Date</th>
+				<th>Appointment Time</th>
+				<th>Doctor Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.appointmentId }}</td>
+        <td>{{ appointment.appointmentTime }}</td>
+        <td>{{ appointment.appointmentDate | date: 'mediumDate' }}</td>
+        <td>{{ appointment.appointmentFees }}</td>
+      </tr>
+		</tbody>
+	</table>
+
+	<h2>Appointment Cancellation</h2>
+	<form>
+		<label for="appointment-id">Appointment ID:</label>
+		<input type="text" id="appointment-id" name="appointment-id">
+		<input type="submit" value="Cancel Appointment">
+	</form>
+
+	<h2>View User Data</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Username</th>
+        <th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.userName }}</td>
+        <td>{{ user.email| date: 'mediumDate' }}</td>
+      </tr>
+		</tbody>
+	</table>
+
+	<h2>Feedback View and Reply</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Feedback Id</th>
+				<th>Feedback</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let feedback of feedbacks">
+        <td>{{ feedback.fId }}</td>
+        <td>{{ feedback.message }}</td>
+      </tr>
+		</tbody>
+	</table>
+</body>
+</html>

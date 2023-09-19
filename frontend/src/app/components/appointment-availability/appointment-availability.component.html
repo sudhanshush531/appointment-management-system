@@ -1,0 +1,12 @@
+<h2>Appointment Availability</h2>
+<div class="timeslots">
+  <div class="timeslot" *ngFor="let timeslot of timeslots" (click)="selectTimeSlot(timeslot)">
+    <p>{{ timeslot.time }}</p>
+    <p *ngIf="!timeslot.available">Not Available</p>
+  </div>
+</div>
+
+<div *ngIf="selectedTimeslot">
+  <p>You have selected {{ selectedTimeslot.time }}</p>
+  <button (click)="bookAppointment()">Book Appointment</button>
+</div>

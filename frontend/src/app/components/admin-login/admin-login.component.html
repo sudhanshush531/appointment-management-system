@@ -1,0 +1,60 @@
+<!-- <div class="container">
+    <h2>Admin Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" formControlName="email" required>
+        <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)" class="text-danger">
+          <div *ngIf="loginForm.controls.email.errors.required">Email is required.</div>
+          <div *ngIf="loginForm.controls.email.errors.email">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control" formControlName="password" required>
+        <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="text-danger">
+          <div *ngIf="loginForm.controls.password.errors.required">Password is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+      </div>
+    </form>
+  </div>
+   -->
+
+
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Home</a>
+    </nav>
+  </header>
+  <main class="bg-image">
+    <div class="container bg-overlay">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 col-sm-8 col-lg-4">
+          <form class="form-group">
+            <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+              <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+              <div class="form-group">
+                <label for="email">User Name :</label>
+                <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Enter User Name"
+                  name="username">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Enter password"
+                  name="password">
+              </div>
+              <!-- <button (click)=handleLogin() class="btn btn-success">Login</button> -->
+              <div class="d-grid gap-2 col-5 mx-auto">
+                <button class="btn btn-primary" type="button" routerLink="/admindashboard">Login</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </main>
+ 
